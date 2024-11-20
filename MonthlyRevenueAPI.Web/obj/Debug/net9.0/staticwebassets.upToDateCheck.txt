@@ -1,2 +1,0 @@
-D:\IT_Solution\Projects\C_Sharp\MonthlyRevenueAPI\MonthlyRevenueAPI.Web\wwwroot\index.html
-wwwroot\index.html
