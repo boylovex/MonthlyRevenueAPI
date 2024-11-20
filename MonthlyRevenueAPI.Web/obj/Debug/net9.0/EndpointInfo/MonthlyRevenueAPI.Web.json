@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "MonthlyRevenueAPI.Web",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/MonthlyRevenue": {
+      "get": {
+        "tags": [
+          "MonthlyRevenue"
+        ],
+        "parameters": [
+          {
+            "name": "DataYearMonth",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "CompanyCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Industry",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonthlyRevenue"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonthlyRevenue"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonthlyRevenue"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MonthlyRevenue"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyRevenue"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyRevenue"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyRevenue"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MonthlyRevenue": {
+        "type": "object",
+        "properties": {
+          "reportDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataYearMonth": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "industry": {
+            "type": "string",
+            "nullable": true
+          },
+          "currentRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "previousRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastYearRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "moMChange": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "yoYChange": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "currentYTDRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastYearYTDRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "ytdChange": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
